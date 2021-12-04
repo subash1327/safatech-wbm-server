@@ -4,8 +4,8 @@ var bodyParser = require('body-parser')
 const cors = require('cors')
 const path = require('path')
 const fs = require('fs')
-global.local = false
-const env_path = path.join(__dirname, local ? 'nodemon copy.json' : 'nodemon.json')
+global.local = true
+const env_path = path.join(__dirname, local ? 'config.json' : 'config heroku.json')
 global.env = JSON.parse(fs.readFileSync(env_path))
 const knex = require('./knex')
 

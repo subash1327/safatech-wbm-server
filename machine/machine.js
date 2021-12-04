@@ -2,13 +2,18 @@ const knex = require('../knex')
 const child_process = require('child_process');
 const path = require('path');
 const logger = require('./logger')
-let machine = {data: {}, process: {}}
+let machine = { data: {}, process: {} }
 
 machine.init = async () => {
-    let data = await knex.knex('machine').select('*')
-    data.forEach(e => {
-        machine.data[e.id] = e
-    });
+    try {
+        let data = await knex.knex('machine').select('*')
+        data.forEach(e => {
+            machine.data[e.id] = e
+        });
+    } catch (error) {
+
+    }
+
 }
 
 machine.update = (e) => {
@@ -26,14 +31,14 @@ machine.stop = async (id) => {
     stopProcess(id)
 }
 
-function updateStatus(id, status){
+function updateStatus(id, status) {
     let data = machine.data[id]
     data['status'] = status
     data['last_update'] = new Date()
     socket.emit('machines', machine.data, data.site_id)
 }
 
-function startProcess(id){
+function startProcess(id) {
     let data = machine.data[id]
     try {
         updateStatus(id, 'STOPPED')
@@ -54,19 +59,19 @@ function startProcess(id){
         // })
         // machine.process[id] = proc;
     } catch (e) {
-        
+
     }
-    
+
 }
 
-function stopProcess(id){
+function stopProcess(id) {
     try {
         updateStatus(id, 'STOPPED')
         machine.process[id].kill('SIGINT')
     } catch (e) {
-        
+
     }
-    
+
 }
 
 module.exports = machine;
