@@ -1,0 +1,29 @@
+{
+	"SaleToPOIRequest": {
+		"MessageHeader": {
+			"POIID": "POITerm1",
+			"MessageClass": "Service",
+			"MessageType": "Request",
+			"ServiceID": "498",
+			"MessageCategory": "Payment",
+			"SaleID": "SaleTermA"
+		},
+		"PaymentRequest": {
+			"PaymentTransaction": {
+				"AmountsReq": {
+					"RequestedAmount": "2.850",
+					"Currency": "KWD"
+				}
+			},
+			"SaleData": {
+				"SaleTransactionID": {
+					"TransactionID": "579",
+					"TimeStamp": "2016-08-15T15:00:57.4+03:00"
+				}
+			},
+			"PaymentData": {
+				"PaymentType": "Normal"
+			}
+		}
+	}
+}

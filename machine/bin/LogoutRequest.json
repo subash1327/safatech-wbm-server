@@ -1,0 +1,12 @@
+{
+	"SaleToPOIRequest": {
+		"MessageHeader": {
+			"POIID": "POITerm1",
+			"MessageClass": "Service",
+			"MessageType": "Request",
+			"ServiceID": "498",
+			"MessageCategory": "Logout",
+			"SaleID": "SaleTermA"
+		}
+	}
+}

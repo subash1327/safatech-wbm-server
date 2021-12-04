@@ -1,0 +1,41 @@
+{
+	"SaleToPOIResponse": {
+		"MessageHeader": {
+			"MessageClass": "Service",
+			"MessageCategory": "Login",
+			"MessageType": "Response",
+			"ServiceID": "498",
+			"SaleID": "SaleTermA",
+			"POIID": "POITerm1"
+		},
+		"LoginResponse": {
+			"Response": {
+				"Result": "Success"
+			},
+			"POISystemData": {
+				"DateTime": "2019-02-12T14:27:09.852+01:00",
+				"POISoftware": {
+					"ManufacturerID": "Verifone",
+					"ApplicationName": "ukb",
+					"SoftwareVersion": "2.0.0.0-14b",
+					"CertificationCode": "ukb2.0.0.0-14b"
+				},
+				"POITerminalData": {
+					"TerminalEnvironment": "Attended",
+					"POICapabilities": [
+						"CustomerDisplay",
+						"CustomerError",
+						"CustomerInput",
+						"EMVContactless",
+						"ICC",
+						"MagStripe"
+					],
+					"POISerialNumber": "986-092-674"
+				},
+				"POIStatus": {
+					"GlobalStatus": "OK"
+				}
+			}
+		}
+	}
+}

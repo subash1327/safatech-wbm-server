@@ -1,0 +1,53 @@
+{
+	"SaleToPOIResponse": {
+		"MessageHeader": {
+			"MessageClass": "Service",
+			"MessageCategory": "Payment",
+			"MessageType": "Response",
+			"ServiceID": "498",
+			"SaleID": "SaleTermA",
+			"POIID": "POITerm1"
+		},
+		"PaymentResponse": {
+			"Response": {
+				"Result": "Success",
+				"AdditionalResponse": ""
+			},
+			"SaleData": {
+				"SaleTransactionID": {
+					"TransactionID": "579",
+					"TimeStamp": "2016-08-15T15:00:57.4+03:00"
+				}
+			},
+			"POIData": {
+				"POITransactionID": {
+					"TransactionID": "",
+					"TimeStamp": "2019-02-12T14:28:25.1+03:00"
+				}
+			},
+			"PaymentResult": {
+				"PaymentType": "Normal",
+				"PaymentInstrumentData": {
+					"PaymentInstrumentType": "Card",
+					"CardData": {
+						"PaymentBrand": "Visa Debit",
+						"MaskedPAN": "464452******6594",
+						"EntryMode": "ICC",
+						"CardCountryCode": "0414"
+					}
+				},
+				"AmountsResp": {
+					"AuthorizedAmount": "2.850"
+				},
+				"OnlineFlag": "true",
+				"AuthenticationMethod": "OnLinePIN",
+				"PaymentAcquirerData": {
+					"MerchantID": "050008080",
+					"AcquirerPOIID": "12617890",
+					"ApprovalCode": "00"
+				},
+				"PaymentReceipt": "<* RECEIPT DATA*>"
+			}
+		}
+	}
+}

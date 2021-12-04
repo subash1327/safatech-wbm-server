@@ -1,0 +1,66 @@
+{
+	"SaleToPOIRequest": {
+		"MessageHeader": {
+			"MessageType": "Request",
+			"SaleID": "SaleTermA",
+			"MessageCategory": "Login",
+			"ServiceID": "498",
+			"POIID": "POITerm1",
+			"ProtocolVersion": "2.0",
+			"MessageClass": "Service"
+		},
+		"LoginRequest": {
+			"POISerialNumber": "329-102-488",
+			"_vf_VIM": {
+				"VimVersion": "1.10.40",
+				"VimType": "VIM Android",
+				"VimConfig": {
+					"Logger": {
+						"LogFramework": "org.apache.logging.slf4j.Log4jLogger",
+						"LogLocation": "/storage/sdcard0/VimLogs/",
+						"LogLevel": "Warning"
+					}
+				}
+			},
+			"DateTime": "2016-08-15T23:08:42.4+01:00",
+			"SaleSoftware": {
+				"SoftwareVersion": "01.98.01",
+				"ApplicationName": "Verifone",
+				"CertificationCode": "ECTS2PS001",
+				"ManufacturerID": "PointOfSaleCo"
+			},
+			"OperatorLanguage": "no",
+			"SaleTerminalData": {
+				"_vf_DeviceInfo": {
+					"DeviceOS": {
+						"OSVersion": "5.0",
+						"OSName": "Android"
+					},
+					"CommunicationSupport": {
+						"BluetoothSupport": "True"
+					},
+					"DeviceModel": "SM-G900F",
+					"ScreenResolution": {
+						"ScreenHeight": "800",
+						"ScreenWidth": "600"
+					},
+					"Memory": {
+						"TotalMemory": "34359738368",
+						"FreeMemory": "1073741824"
+					},
+					"DeviceManufacturer": "Samsung"
+				},
+				"TerminalEnvironment": "Attended",
+				"_vf_SaleTerminalSerialNumber": "123456789-XYZ",
+				"SaleCapabilities": [
+					"PrinterReceipt",
+					"CashierStatus",
+					"CashierError",
+					"CashierDisplay",
+					"SignatureCapture",
+					"SignatureVerification"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+"SaleToPOIRequest":{
+"MessageHeader":{
+"MessageClass":"Service",
+"MessageCategory":"Abort",
+"MessageType":"Request",
+"ServiceID":"498",
+"SaleID":"SaleTermA",
+"POIID":"POITerm1"
+},
+"AbortRequest":{
+"MessageReference":{
+"MessageCategory":"Payment",
+"ServiceID":"642",
+"SaleID":"SaleTermA",
+"POIID":"POITerm1"
+},
+"AbortReason":"Aborted by operator"
+}
+}
+}

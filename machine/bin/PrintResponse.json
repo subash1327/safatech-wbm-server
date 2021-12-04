@@ -1,0 +1,1 @@
+{"SaleToPOIResponse":{"MessageHeader":{"MessageClass":"Device", "MessageCategory":"Print", "MessageType":"Response", "ServiceID":"498", "DeviceID":"3", "SaleID":"SaleTermA", "POIID":"POITerm1"}, "PrintResponse":{"DocumentQualifier":"CustomerReceipt", "Response":{"Result":"Success"}}}}
