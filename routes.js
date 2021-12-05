@@ -2,11 +2,13 @@ const express = require('express');
 const router = express.Router();
 const handlers = require('./handlers')
 const machine = require('./machine/routes')
+const payment = require('./payment/routes')
 const site = require('./site/routes')
 const user = require('./user/routes')
 const check = require('./middlewares/check_token')
 
 router.use('/machine', check, machine)
+router.use('/payment', check, payment)
 router.use('/site', check, site)
 router.use('/user', user)
 router.post('/subscribe', handlers.subscribe)
