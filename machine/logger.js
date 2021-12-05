@@ -13,6 +13,13 @@ exports.log = async (data, machine) => {
     addLog(data, type, machine)
 }
 
+
+exports.add = async (data, machine) => {
+    var type = 'msg'
+    if(data.includes('ERR') || data.includes('Error')) type = 'err'
+    addLog(data, type, machine)
+}
+
 exports.get = async (req, res) => {
     let { id, limit, offset, from, to } = req.query
     let table = 'logs'
@@ -50,7 +57,5 @@ exports.download = async (req, res) => {
     data.forEach(log => {
         fs.appendFileSync(log_path, `${log.date} ${log.data}\n`);
     });
-
     res.download(`${log_path}`)
-    
 }

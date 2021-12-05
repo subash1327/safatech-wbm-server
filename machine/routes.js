@@ -8,6 +8,8 @@ router.post('/add', handlers.add)
 router.post('/start', handlers.start)
 router.post('/stop', handlers.stop)
 router.post('/delete', handlers.delete)
+
+router.post('/logs/add', check, logger.add)
 router.get('/logs', check, logger.get)
 router.get('/logs/download',check, logger.download)
 

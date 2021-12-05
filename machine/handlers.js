@@ -50,6 +50,14 @@ exports.start = async (req, res) => {
         message: 'Successfully Started',
     })
 }
+exports.restart = async (req, res) => {
+    let id = req.body.id
+    machine.restart(id)
+    res.send({
+        success: true,
+        message: 'Successfully Restarted',
+    })
+}
 exports.stop = async (req, res) => {
     let id = req.body.id
     machine.stop(id)

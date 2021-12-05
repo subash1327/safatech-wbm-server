@@ -23,12 +23,18 @@ machine.update = (e) => {
 
 machine.start = async (id) => {
     updateStatus(id, 'IDLE')
-    startProcess(id)
+    let data = machine.data[id]
+    socket.emit('start', data, data.site_id)
     updateStatus(id, 'ACTIVE')
 }
-
+machine.restart = async (id) => {
+    let data = machine.data[id]
+    socket.emit('restart', data, data.site_id)
+}
 machine.stop = async (id) => {
-    stopProcess(id)
+    updateStatus(id, 'STOPPED')
+    let data = machine.data[id]
+    socket.emit('stop', data, data.site_id)
 }
 
 function updateStatus(id, status) {
@@ -36,42 +42,6 @@ function updateStatus(id, status) {
     data['status'] = status
     data['last_update'] = new Date()
     socket.emit('machines', machine.data, data.site_id)
-}
-
-function startProcess(id) {
-    let data = machine.data[id]
-    try {
-        updateStatus(id, 'STOPPED')
-        logger.log('libraries not installed', data)
-        // let proc = child_process.spawn(`java`, ["-jar",`bin/runner` , data.ip, data.knet, data.port], {
-        //     cwd:__dirname})
-        // proc.stdout.addListener('data', (data) => {
-        //     logger.log(data.toString(), data)
-        // })
-        // proc.stdout.addListener('error', (data) => {
-        //     logger.log(data.toString(), data)
-        // })
-        // proc.stderr.addListener('data', (data) => {
-        //     logger.log(data.toString(), data)
-        // })
-        // proc.stdout.addListener('end', () => {
-        //     updateStatus(id, 'STOPPED')
-        // })
-        // machine.process[id] = proc;
-    } catch (e) {
-
-    }
-
-}
-
-function stopProcess(id) {
-    try {
-        updateStatus(id, 'STOPPED')
-        machine.process[id].kill('SIGINT')
-    } catch (e) {
-
-    }
-
 }
 
 module.exports = machine;
