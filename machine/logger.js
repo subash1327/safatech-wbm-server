@@ -14,10 +14,9 @@ exports.log = async (data, machine) => {
 }
 
 
-exports.add = async (data, machine) => {
-    var type = 'msg'
-    if(data.includes('ERR') || data.includes('Error')) type = 'err'
-    addLog(data, type, machine)
+exports.add = async (req, res) => {
+    let {log, machine} = req.body;
+    addLog(log.data, log.type, machine)
 }
 
 exports.get = async (req, res) => {
