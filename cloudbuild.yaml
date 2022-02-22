@@ -1,0 +1,9 @@
+steps:
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    args:
+      - '-c'
+      - gcloud beta run deploy parking --source . --platform managed --region us-central1
+    entrypoint: bash
+options:
+  machineType: 'E2_HIGHCPU_8'
+timeout: 1600s
